@@ -1,15 +1,16 @@
 <template>
   <div>
+    <app></app>
     1111111111111
   </div>
 </template>
 
 <script>
+import app from "./app.vue";
 export default {
-  name:"PostComponent"
+  name:"PostComponent",
+  components: {app}
 }
-
-console.log('post')
 
 </script>
 
