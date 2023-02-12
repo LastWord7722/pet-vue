@@ -19,7 +19,7 @@
 <body>
 
     <div id="app">
-        <example-component></example-component>
+        <post-component></post-component>
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -81,8 +81,8 @@
 </body>
 </html>
 <script>
-    import ExampleComponent from "../../js/components/ExampleComponent";
+    import PostComponent from "../../js/components/PostComponent";
     export default {
-        components: {ExampleComponent}
+        components: {PostComponent}
     }
 </script>

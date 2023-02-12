@@ -22,7 +22,7 @@
     </head>
     <body class="antialiased">
     <div id="app">
-        <example-component></example-component>
+        <post-component></post-component>
     </div>
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
             @if (Route::has('login'))
@@ -134,8 +134,8 @@
     </body>
 </html>
 <script>
-    import ExampleComponent from "../js/components/ExampleComponent";
+    import PostComponent from "../js/components/PostComponent";
     export default {
-        components: {ExampleComponent}
+        components: {PostComponent}
     }
 </script>
