@@ -18,7 +18,7 @@
     </head>
     <body class="antialiased">
     <div id="app">
-        <post-component123></post-component123>
+        <comp1></comp1>
     </div>
 
     </body>

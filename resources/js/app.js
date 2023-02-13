@@ -3,10 +3,9 @@ import { createApp } from 'vue';
 
 const app = createApp({});
 
+import comp1 from "./components/comp1.vue";
 
-import PostComponent from './components/PostComponent.vue';
-
-app.component('post-component123', PostComponent);
+app.component('comp1', comp1)
 
 // Object.entries(import.meta.glob('./**/*.vue', { eager: true })).forEach(([path, definition]) => {
 //     app.component(path.split('/').pop().replace(/\.\w+$/, ''), definition.default);
