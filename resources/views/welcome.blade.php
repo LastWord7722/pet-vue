@@ -18,7 +18,7 @@
     </head>
     <body class="antialiased">
     <div id="app">
-        <comp1></comp1>
+        <persons></persons>
     </div>
 
     </body>

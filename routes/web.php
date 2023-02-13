@@ -17,14 +17,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/main', function () {
-    return view('main');
-});
+/*Route::get('/home', function () {
+    return view('home');
+});*/
+
+
 
 
 
 Auth::routes();
 
 /*Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');*/
-/*
-Route::get('/main',[\App\Http\Controllers\MainController::class, '__invoke']);*/
+
+Route::get('/main',[\App\Http\Controllers\MainController::class, '__invoke'])->name('main');
+

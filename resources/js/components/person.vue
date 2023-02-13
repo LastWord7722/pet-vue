@@ -8,22 +8,22 @@ export default {
 
   data(){
     return{
-      preson : null
+      person : null
     }
   },
 
-  mounted() {
-    this.getPerson()
+  mounted () {
+    this.getPersons()
   },
 
-  methods:{
-    getPerson(){
-      axios.get('/main')
-          .then(data =>{
-            console.log(data);
+  methods : {
+    getPersons() {
+      axios.get('/public/main')
+          .then(res => {
+            this.person = res.data
           })
-    }
-  },
+    },
+  }
 
 }
 </script>

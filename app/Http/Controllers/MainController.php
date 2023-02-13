@@ -26,6 +26,6 @@ class MainController extends Controller
             ],
         ];
 
-        return 124;
+        return $persons;
     }
 }
