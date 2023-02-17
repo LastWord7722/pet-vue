@@ -22,4 +22,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::group(['prefix'=>'person', 'namespace'=>'App\Http\Controllers\Person'], function(){
     Route::get('/index',[MainController::class, 'index'])->name('main.index');
     Route::post('/store',[MainController::class, 'store'])->name('main.store');
+    Route::patch('/update/{person}',[MainController::class, 'update'])->name('main.update');
 });
