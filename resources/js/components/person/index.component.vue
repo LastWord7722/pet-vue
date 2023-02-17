@@ -1,35 +1,48 @@
 <template>
-  <div>
-    <create-component></create-component>
-  </div>
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">age</th>
+    </tr>
+    </thead>
+    <tbody class="table-group-divider">
+    <tr v-for="persons in persons">
+      <th scope="row">{{ persons.id}}</th>
+      <td>{{ persons.name}}</td>
+      <td>{{ persons.age}}</td>
+    </tr>
+    </tbody>
+  </table>
 </template>
 
 <script>
-import createComponent from "./createComponent.vue";
+
 export default {
-  name: "person",
+  name: "index",
 
   data(){
     return{
-      person : null
+      persons : []
     }
   },
 
-/*  mounted () {
+  mounted () {
     this.getPersons()
   },
 
   methods : {
     getPersons() {
-      axios.get('/public/main')
+      axios.get('/public/api/person/index')
           .then(res => {
-            this.person = res.data
+            this.persons = res.data
           })
     },
-  },*/
+  },
 
   components: {
-    createComponent
+
   }
 
 }

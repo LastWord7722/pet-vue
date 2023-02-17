@@ -1,31 +1,23 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\main;
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\Person\StorePersonRequest;
+use App\Models\Person;
 
 class MainController extends Controller
 {
-    public function __invoke()
+    public function index()
     {
-        $persons = [
-            [
-                'id' => 1,
-                'name'=> 'Mark',
-                'age'=> 22,
-            ],
-            [
-                'id' => 2,
-                'name'=> 'vlada',
-                'age'=> 19,
-            ],
-            [
-                'id' => 3,
-                'name'=> 'Koly',
-                'age'=> 18,
-            ],
-        ];
+        $persons = Person::all();
 
         return $persons;
+    }
+
+    public function store(StorePersonRequest $personRequest){
+        $data = $personRequest->validated();
+        $person = Person::create($data);
+        return $person;
     }
 }

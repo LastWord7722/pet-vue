@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('page.welcome');
 });
 
 /*Route::get('/home', function () {
@@ -29,5 +29,5 @@ Auth::routes();
 
 /*Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');*/
 
-Route::get('/main',[\App\Http\Controllers\MainController::class, '__invoke'])->name('main');
+
 

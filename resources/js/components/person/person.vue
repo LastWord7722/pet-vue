@@ -1,28 +1,26 @@
 <template>
-
+  <div>
+    <create-component></create-component>
+    <index-component></index-component>
+  </div>
 </template>
 
 <script>
+import createComponent from "./createComponent.vue";
+import indexComponent from "./index.component.vue";
 export default {
   name: "person",
 
   data(){
     return{
-      person : null
+      persons : null
     }
   },
 
-  mounted () {
-    this.getPersons()
-  },
 
-  methods : {
-    getPersons() {
-      axios.get('/public/main')
-          .then(res => {
-            this.person = res.data
-          })
-    },
+  components: {
+    createComponent,
+    indexComponent,
   }
 
 }
