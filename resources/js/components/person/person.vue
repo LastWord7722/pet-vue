@@ -1,13 +1,14 @@
 <template>
   <div>
-    <create-component></create-component>
-    <index-component></index-component>
+    <create-component ref="create"></create-component>
+    <index-component ref="index"></index-component>
+
   </div>
 </template>
 
 <script>
 import createComponent from "./createComponent.vue";
-import indexComponent from "./index.component.vue";
+import indexComponent from "./indexComponent.vue";
 export default {
   name: "person",
 
@@ -15,6 +16,9 @@ export default {
     return{
       persons : null
     }
+  },
+
+  mounted() {
   },
 
 
