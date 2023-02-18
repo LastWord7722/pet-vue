@@ -23,4 +23,5 @@ Route::group(['prefix'=>'person', 'namespace'=>'App\Http\Controllers\Person'], f
     Route::get('/index',[MainController::class, 'index'])->name('main.index');
     Route::post('/store',[MainController::class, 'store'])->name('main.store');
     Route::patch('/update/{person}',[MainController::class, 'update'])->name('main.update');
+    Route::delete('/delete/{person}',[MainController::class, 'delete'])->name('main.delete');
 });

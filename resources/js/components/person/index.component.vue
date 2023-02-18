@@ -4,7 +4,9 @@
     <tr>
       <th scope="col">#</th>
       <th scope="col">Name</th>
-      <th scope="col">age</th>
+      <th scope="col">Age</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
     </tr>
     </thead>
     <tbody class="table-group-divider">
@@ -14,6 +16,7 @@
           <td>{{ persons.name}}</td>
           <td>{{ persons.age}}</td>
           <td><a href="" @click.prevent="changeEditPersonId(persons.id, persons.name, persons.age )" class="btn btn-success"> Edit</a></td> <!--вызываем метод для привзяывания id-->
+          <td><a href="" @click.prevent="deletePerson(persons.id)" class="btn btn-danger"> Delete</a></td>
         </tr>
         <tr :class="isEdit(persons.id) ? '' :'d-none' "> <!--Проверка текущего id -->
           <th scope="row"> {{ persons.id}}</th>
@@ -61,7 +64,6 @@ export default {
     },
 
     updatePerson(id){
-
       console.log(this.name, this.age);
       axios.patch(`/public/api/person/update/${id}`,{name: this.name, age: this.age})
           .then( res => {
@@ -69,6 +71,20 @@ export default {
             this.getPersons()
           })
       this.editPersonId =  null
+      },
+
+      deletePerson(id){
+        const destroy = confirm('Удалить запись под номером: '+ id)
+        if(destroy){
+          axios.delete(`/public/api/person/delete/${id}`)
+              .then( res => {
+                console.log(res)
+                this.getPersons()
+              })
+          this.editPersonId =  null
+        }else {
+          return
+        }
       },
 
 
