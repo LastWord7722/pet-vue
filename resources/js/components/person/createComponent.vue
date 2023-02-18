@@ -29,12 +29,10 @@ export default {
 
   methods:{
     addPerson(){
-      console.log(this.name, this.age);
       axios.post('/public/api/person/store',{name: this.name, age: this.age})
           .then( res => {
             this.name = null
             this.age = null
-            console.log(res)
           })
     },
   },

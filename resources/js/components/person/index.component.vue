@@ -64,10 +64,8 @@ export default {
     },
 
     updatePerson(id){
-      console.log(this.name, this.age);
       axios.patch(`/public/api/person/update/${id}`,{name: this.name, age: this.age})
           .then( res => {
-            console.log(res)
             this.getPersons()
           })
       this.editPersonId =  null
@@ -78,12 +76,9 @@ export default {
         if(destroy){
           axios.delete(`/public/api/person/delete/${id}`)
               .then( res => {
-                console.log(res)
                 this.getPersons()
               })
           this.editPersonId =  null
-        }else {
-          return
         }
       },
 
