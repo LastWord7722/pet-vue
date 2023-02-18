@@ -41,6 +41,7 @@ export default {
   components: {
     editComponent
   },
+
   mounted () {
     this.getPersons()
   },
@@ -62,8 +63,6 @@ export default {
         fullEdit.age = age
       }
     },
-
-
       deletePerson(id){
         const destroy = confirm('Удалить запись под номером: '+ id)
         if(destroy){
@@ -78,11 +77,6 @@ export default {
     isEdit(id){ // проверка
       return this.editPersonId === id
     },
-
-
   },
-
-
-
 }
 </script>

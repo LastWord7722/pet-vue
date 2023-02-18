@@ -27,10 +27,6 @@ export default {
     }
   },
 
-  mounted() {
-
-  },
-
   methods: {
     updatePerson(id) {
       axios.patch(`/public/api/person/update/${id}`, {name: this.name, age: this.age})
@@ -39,10 +35,6 @@ export default {
           })
       this.$parent.editPersonId = null
     },
-
   },
-
-  components: {}
-
 }
 </script>

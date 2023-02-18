@@ -18,15 +18,10 @@ export default {
     }
   },
 
-  mounted() {
-  },
-
-
   components: {
     createComponent,
     indexComponent,
   }
-
 }
 </script>
 
