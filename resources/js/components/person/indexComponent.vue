@@ -11,13 +11,7 @@
     </thead>
     <tbody class="table-group-divider">
       <template v-for="person in person">
-        <tr :class="isEdit(person.id) ? 'd-none' : '' ">
-          <th scope="row">{{ person.id}}</th>
-          <td>{{ person.name}}</td>
-          <td>{{ person.age}}</td>
-          <td><a href="" @click.prevent="changeEditPersonId(person.id, person.name, person.age )" class="btn btn-success"> Edit</a></td> <!--вызываем метод для привзяывания id-->
-          <td><a href="" @click.prevent="deletePerson(person.id)" class="btn btn-danger"> Delete</a></td>
-        </tr>
+        <show-component :person="person" :ref="`show_${person.id}`"></show-component>
         <edit-component :person="person" :ref="`edit_${person.id}`"></edit-component>
       </template>
     </tbody>
@@ -26,6 +20,7 @@
 
 <script>
 import editComponent from "./editComponent.vue";
+import showComponent from "./showComponent.vue";
 export default {
   name: "index",
 
@@ -39,7 +34,8 @@ export default {
   },
 
   components: {
-    editComponent
+    editComponent,
+    showComponent
   },
 
   mounted () {
@@ -47,12 +43,6 @@ export default {
   },
 
   methods : {
-    getPersons() {
-      axios.get('/public/api/person/index')
-          .then(res => {
-            this.person = res.data
-          })
-    },
 
     changeEditPersonId(id, name, age){   // приравнение переменой текущему объекту
       this.editPersonId = id
@@ -63,16 +53,14 @@ export default {
         fullEdit.age = age
       }
     },
-      deletePerson(id){
-        const destroy = confirm('Удалить запись под номером: '+ id)
-        if(destroy){
-          axios.delete(`/public/api/person/delete/${id}`)
-              .then( res => {
-                this.getPersons()
-              })
-          this.editPersonId =  null
-        }
-      },
+
+    getPersons() {
+      axios.get('/public/api/person/index')
+          .then(res => {
+            this.person = res.data
+          })
+    },
+
 
     isEdit(id){ // проверка
       return this.editPersonId === id
