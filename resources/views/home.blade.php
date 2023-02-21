@@ -9,9 +9,9 @@
     <title>Document</title>
 </head>
 <body>
-    HOME
+
     <div id="app">
-        <valuta> </valuta>
+        @yield('content')
     </div>
 </body>
 </html>
