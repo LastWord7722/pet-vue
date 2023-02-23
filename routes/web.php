@@ -14,6 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+<<<<<<< HEAD
+=======
+Route::get('/', function () {
+    return view('page.person');
+});
+>>>>>>> master
 
 
 Route::get('/{page}', [SPAController::class, '__invoke'])->where('any', '.*');;
