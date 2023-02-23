@@ -13,23 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('page.welcome');
-});
+
 
 Route::get('/spa/{page}', [App\Http\Controllers\SPAController::class, '__invoke']);
 
-/*Route::get('/home', function () {
-    return view('home');
-});*/
 
-
-
-
-
-Auth::routes();
-
-/*Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');*/
 
 
 
