@@ -80,9 +80,3 @@
     </div>
 </body>
 </html>
-<script>
-    import PostComponent from "../../js/components/PostComponent";
-    export default {
-        components: {PostComponent}
-    }
-</script>

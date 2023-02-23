@@ -1,17 +1,19 @@
 import { createRouter, createWebHistory } from "vue-router";
-import BlogComponent from "./components/blog/blogComponent.vue";
-import TagComponent from "./components/blog/tagComponent";
 
+const routes = [
+    {path:'/public/index', component: () => import('./components/People/indexComponent.vue'),
+     name: 'person.index'},
 
+    {path:'/public/create', component: () => import('./components/People/CreateComponent.vue'),
+     name: 'person.create'},
+
+    {path:'/public/show', component: () => import('./components/People/ShowComponent.vue'),
+     name: 'person.show'}
+]
 
 const router = createRouter({
     history: createWebHistory(),
     routes
 })
 
-const routes = [
-    { path: '/blog', component: BlogComponent },
-    { path: '/tags', component: TagComponent },
-]
-
-export default route
+export default router

@@ -1,11 +1,11 @@
 <template>
-    <div>
-      tag
-    </div>
+  <div>
+    update
+  </div>
 </template>
 
 <script>
 export default {
-  name: "blogComponent"
+  name: "UpdateComponent"
 }
 </script>
