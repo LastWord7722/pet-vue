@@ -1,10 +1,6 @@
 <template>
   <div>
-    index
-
-    <router-link to="/spa/tags">tag</router-link>
-    <p></p>
-    <router-link to="/spa/blog">blog</router-link>
+    <router-link :to="{name:'person.index'}">people</router-link>
 
     <router-view></router-view>
 
