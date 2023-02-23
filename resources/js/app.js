@@ -3,7 +3,7 @@ import { createApp } from 'vue';
 import router from "./router.js";
 
 const app = createApp({});
-import index from "./components/blog/index.vue";
+import index from "./components/index.vue";
 
 app.component('index', index)
 
