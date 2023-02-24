@@ -14,9 +14,6 @@
         <router-link :to="{name:'person.create'}">Create</router-link>
       </div>
 
-      <div class=" m-lg-1">
-        <router-link :to="{name:'person.show'}">Show</router-link>
-      </div>
     </div>
   </nav>
 

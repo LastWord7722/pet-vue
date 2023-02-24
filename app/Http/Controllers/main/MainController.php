@@ -22,6 +22,11 @@ class MainController extends Controller
         return $person;
     }
 
+    public function show(Person $person){
+
+        return $person;
+    }
+
     public function update(UpdatePersonRequest $personRequest, Person $person){
         $data = $personRequest->validated();
         $person->update($data);
