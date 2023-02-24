@@ -17,7 +17,9 @@
 </template>
 
 <script>
+import router from "../../router.js";
 export default {
+
   name: "CreateComponent",
 
   data(){
@@ -31,9 +33,13 @@ export default {
     addPeople(){
       axios.post('/public/api/person/store',{name: this.name, age: this.age})
           .then(res => {
-            alert('Успешно добавлен человек с Name: ' +this.name +' '+'Age: '+ this.age)
-            this.name = null
-            this.age = null
+            let comingIndex=confirm('Успешно добавлен человек с \n Name: ' +this.name +'\n '+'Age: '+ this.age + "\n Перейти к списку персон?")
+            if (comingIndex){
+              router.push({name : 'person.index'})
+            }else {
+              this.name = null
+              this.age = null
+            }
           })
     }
   }
